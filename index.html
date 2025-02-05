@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine, Princess Janette?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffebee;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d32f2f;
+            font-size: 3em;
+        }
+        p {
+            color: #333;
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+        .heart {
+            color: #d32f2f;
+            font-size: 4em;
+            animation: beat 1s infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .yes-button {
+            background-color: #d32f2f;
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .no-button {
+            background-color: transparent;
+            color: #888;
+            font-size: 0.8em;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .reply {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">❤️</div>
+    <h1>To My Princess Janette</h1>
+    <p>
+        Our journey hasn’t always been easy. We’ve had our share of rocky moments, but through it all, one thing has remained constant: <strong>our love</strong>.<br><br>
+        Every challenge we’ve faced has only made us stronger. We’ve fought for each other, grown together, and learned what it truly means to love someone unconditionally.<br><br>
+        You’re my best friend, my partner, and the person I want to share every moment with. No matter what life throws at us, I know we can handle it—<strong>together</strong>.<br><br>
+        This Valentine’s Day, I want to remind you how much you mean to me. You’re my everything, and I’m so grateful to have you in my life.<br><br>
+        So, my love, will you be my Valentine? Not just today, but every day?<br><br>
+        Forever yours,<br>
+        <strong>[Your Name]</strong>
+    </p>
+    <!-- Add your photos here -->
+    <img src="photo1.jpg" alt="Our Photo" class="photo">
+    <img src="photo2.jpg" alt="Our Photo" class="photo">
+    <div class="buttons">
+        <button class="yes-button" onclick="showReply()">Yes</button>
+        <button class="no-button" onclick="moveNoButton()">No</button>
+    </div>
+    <div id="reply" class="hidden reply">
+        ❤️ Yay! You’ve made me the happiest person in the world, Princess Janette. I love you! ❤️
+    </div>
+
+    <script>
+        function showReply() {
+            document.getElementById("reply").classList.remove("hidden");
+            document.querySelector(".buttons").classList.add("hidden");
+        }
+
+        function moveNoButton() {
+            const noButton = document.querySelector(".no-button");
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = "absolute";
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
